@@ -11,6 +11,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -102,6 +105,7 @@ public class MessActivity extends AppCompatActivity {
                 String newmess = dataSnapshot.getValue().toString();
                 mess.add(newmess);
                 ArrayAdapter adapter = new ArrayAdapter(MessActivity.this , android.R.layout.simple_expandable_list_item_1 , mess);
+             //  ArrayAdapter adapter = new ArrayAdapter(MessActivity.this , R.layout.dialod_ib , mess);
                 lv.setAdapter(adapter);
             }
 
@@ -168,4 +172,22 @@ public class MessActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) { // them menu
+        getMenuInflater().inflate(R.menu.menu_mess, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) { // bat su kien menu
+        switch (item.getItemId()){
+            case R.id.menulogout:
+                Intent intent = new Intent(MessActivity.this , MainActivity.class);
+                startActivity(intent);
+            case R.id.menusetting:
+                profile();
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

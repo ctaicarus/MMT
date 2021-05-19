@@ -8,7 +8,7 @@
         android:label="Mess"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/AppTheme">
         <activity android:name=".MessActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     android:layout_marginTop="0dp"
     android:layout_marginBottom="0dp"
-    android:alwaysDrawnWithCache="true"
-    android:animateLayoutChanges="true"
+    android:alwaysDrawnWithCache="false"
+    android:animateLayoutChanges="false"
     android:background="@drawable/demo"
-    tools:context=".MessActivity">
+    android:visibility="visible"
+    tools:context=".MessActivity"
+    tools:visibility="visible">
 
     <Button
         android:id="@+id/btnsend"
@@ -27,30 +29,31 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.774" />
 
     <EditText
         android:id="@+id/editmess"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="249dp"
+        android:layout_height="47dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginBottom="61dp"
+        android:background="@drawable/ib"
         android:ems="10"
         android:hint="say"
         android:inputType="textPersonName"
         android:textColorHint="#B412BE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnsend"
-        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.775" />
 
     <ListView
         android:id="@+id/listview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="363dp"
+        android:layout_height="531dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
@@ -58,9 +61,10 @@
         android:cacheColorHint="#0F0F0F"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -68,7 +72,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_begin="444dp"
+        app:layout_constraintGuide_begin="396dp"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

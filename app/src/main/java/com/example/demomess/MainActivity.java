@@ -26,11 +26,17 @@ public class MainActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(MainActivity.this , "Nhập tên" , Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
-                    Toast toast = Toast.makeText(MainActivity.this , "Thành công" , Toast.LENGTH_SHORT);
-                    toast.show();
-                    Intent intent = new Intent(MainActivity.this , MessActivity.class);
-                    intent.putExtra("key" , name);
-                    startActivity(intent);
+                    if(name.equals("CTA") || name.equals("Tu") || name.equals("Kien") || name.equals("Tuan")){
+                        Toast toast = Toast.makeText(MainActivity.this , "Thành công" , Toast.LENGTH_SHORT);
+                        toast.show();
+                        Intent intent = new Intent(MainActivity.this , MessActivity.class);
+                        intent.putExtra("key" , name);
+                        startActivity(intent);
+                    } else {
+                        Toast toast = Toast.makeText(MainActivity.this , "Sai thông tin" , Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
                 }
             }
         });
@@ -38,6 +44,5 @@ public class MainActivity extends AppCompatActivity {
     private void anhxa(){
         editText = findViewById(R.id.editText);
         btndangnhap = findViewById(R.id.button_dangnhap);
-
     }
 }
